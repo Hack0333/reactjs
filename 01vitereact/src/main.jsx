@@ -8,25 +8,18 @@ function MyApp(){
     )
 }
 
-// custom react
-const ReactElement = {
-    type : 'a',
-    props : {
-        href : "https://google.com",
-        target : "_blank"
-    },
-    children : "click me to visit",
-}
+const anotherUSer = " Chai aur React";
 
-const anotherElement = (
-    <a href='www.google.com' target='_blank'>visit me</a>
+const reactElement = React.createElement(
+    'a' ,//first parameter is tag
+    {href: "https://google.com", target: "_blank"} ,//second parameter is object
+    "click me to visit",
+    anotherUSer
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+    //reactElement // its working how react element work
     // <App />
-    // <MyApp />
-    // MyApp() it will also run because end of the day its also a funtion
-    //reactElement //object is used with parenthesis
-    anotherElement
+    reactElement
 
 )
