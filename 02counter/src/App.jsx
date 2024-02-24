@@ -4,18 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  //we will use useState hook so that the change value will be reflected in the UI
-  // const [Counter,setCounter] = useState(15) //its const so we can't change the value
   let [Counter,setCounter] = useState(15);
 
-  // let Counter = 15;
-
   const addValue = ()=>{
-    // console.log("clicked ",{Counter});
-    Counter = Counter+1;
-    // setCounter(Counter + 1); Or
-    setCounter(Counter);
-    // console.log("clicked ",{Counter});
+    //value will be changed only once irrespective of how many times we call the set counter
+    // setCounter(Counter + 1)
+    // setCounter(Counter + 1)
+    // setCounter(Counter + 1)
+  
+    // this approach is used to change value multpile times b/c the setcounter is updating the previous value of counter
+    setCounter(prevCounter => prevCounter + 1 );
+    setCounter(prevCounter => prevCounter + 1 );
+    setCounter(prevCounter => prevCounter + 1 );
   }
 
   const removeValue = ()=>{
